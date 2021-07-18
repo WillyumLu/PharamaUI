@@ -225,7 +225,7 @@ class TreatmentGene1 extends React.Component {
             <Accordion
               dataArray={this.generateDataArray()}
               animation={true}
-              expanded={true}
+              expanded={[]}
               renderHeader={this._renderHeader}
               renderContent={this._renderContent}
               style={{ borderColor: "white" }}

@@ -6,6 +6,7 @@ import { getFocusedRouteNameFromRoute, NavigationContainer } from "@react-naviga
 import { Root } from  "native-base"
 
 import LoginPage from "./LoginPage";
+import SignupPage from "./SignupPage";
 import NewsPage from "./NewsPage";
 import TreatmentPage from "./components/Treatment/TreatmentPage";
 import TreatmentGene1 from "./components/Treatment/TreatmentGene1";
@@ -68,6 +69,16 @@ export function SettingScreen() {
         <InfoStack.Navigator>
             <InfoStack.Screen name="Setting" component={SettingPage} />
         </InfoStack.Navigator>
+    )
+}
+
+const AuthStack = createStackNavigator();
+export function AuthScreen() {
+    return (
+        <AuthStack.Navigator initialRouteName={"SignIn"}>
+            <AuthStack.Screen name="SignIn" component={LoginPage} />
+            <AuthStack.Screen name="SignUp" component={SignupPage} />
+        </AuthStack.Navigator>
     )
 }
 
@@ -156,7 +167,14 @@ export default function App() {
                             })}
                         />
                     ) : (
-                        <RootStack.Screen name="Login" component={LoginPage} />
+                        <RootStack.Screen
+                            name="Landing"
+                            component={AuthScreen}
+                            options={({ route }) => ({
+                                //headerTitle: getHeaderTitle(route),
+                                headerShown: false
+                            })}
+                        />
                     )}
                 </RootStack.Navigator>
             </NavigationContainer>

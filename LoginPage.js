@@ -78,7 +78,7 @@ class LoginPage extends React.Component {
               style={{fontSize:13}}
               color="grey"
               title="Not a user? Sign up!"
-              onPress={() => this.props.navigation.navigate("Signup")} />
+              onPress={() => this.props.navigation.navigate("SignUp")} />
 
 
           </View>
