@@ -15,6 +15,7 @@ import InfoPage from "./InfoPage";
 import TrialsPage from "./TrialsPage";
 import SettingPage from "./SettingPage"
 import AuthContext from "./contexts/AuthContext";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 /*
 function getHeaderTitle(route) {
@@ -150,6 +151,7 @@ export default function App() {
     );
 
     return (
+        <SafeAreaProvider>
         <AuthContext.Provider
             value={{
                 signIn: data => dispatch({ type: "SignIn" }),
@@ -179,5 +181,6 @@ export default function App() {
                 </RootStack.Navigator>
             </NavigationContainer>
         </AuthContext.Provider>
+        </SafeAreaProvider>
     );
 }

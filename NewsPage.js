@@ -1,6 +1,7 @@
 import React from "react";
-import { Button, Card, CardItem, Container, Content, Icon, Text, View } from "native-base";
+import { CardItem, Container, Content, Icon, Text, View } from "native-base";
 import { Dimensions, StyleSheet } from "react-native";
+import { Card, Button } from 'react-native-elements'
 
 class NewsPage extends React.Component {
     constructor(props) {
@@ -20,38 +21,44 @@ class NewsPage extends React.Component {
         return (
             <Container>
                 <Content>
-                    <View style={styles.greetingView}>
-                        <Text style={styles.greetingText}>
-                            Welcome back.{"\n"}
-                            Here's an update on your variant.
+
+                    <View style={styles.greetingView }>
+                        <Text style={{color:'green', fontSize:22, alignSelf: "center"}}>Welcome Back!</Text>
+
+                        <Text>
+                            <Icon type="FontAwesome" name="newspaper-o" size={20} />
+                            <Text style={{color:'green', fontSize:16, alignSelf: 'center'}}>   Here's Your Update on Varient:</Text>
                         </Text>
                     </View>
-                    <Card transparent>
-                        <CardItem style={{ marginVertical: windowDim.height * 0.025 }}>
-                            <Icon type="AntDesign" name="exception1" />
-                            <Text style={{ flex: 1, flexWrap: "wrap" }}>
-                                <Text style={styles.highlightedText}>{this.state.newPatient_GeneOfInterest} new patients </Text>
-                                registered to Varient claiming a diagnosis with your gene of interest.
-                            </Text>
-                        </CardItem>
-                        <CardItem style={{ marginVertical: windowDim.height * 0.025 }}>
-                            <Icon type="AntDesign" name="exception1" />
-                            <Text style={{ flex: 1, flexWrap: "wrap" }}>
-                                <Text style={styles.highlightedText}>{this.state.newPatient_ExactVariant} new patients </Text>
-                                registered to Varient claiming a diagnosis with your exact genetic variant.
-                            </Text>
-                        </CardItem>
-                        <CardItem style={{ marginVertical: windowDim.height * 0.025 }}>
-                            <Icon type="AntDesign" name="exception1" />
-                            <Text style={{ flex: 1, flexWrap: "wrap" }}>
-                                <Text style={styles.highlightedText}>{this.state.updatedPatient_ExactVariant} patients </Text>
-                                with your exact genetic variant have updated their medication data.
-                            </Text>
-                        </CardItem>
+                    <Card>
+                                <Text style={{ flex: 1, flexWrap: "wrap", fontSize:15}}>
+                                    <Icon type="FontAwesome5" name="clipboard-list" />
+                                    <Text style={styles.highlightedText}> {this.state.newPatient_GeneOfInterest} new patients </Text>
+                                    registered to Varient claiming a diagnosis with your gene of interest.
+                                </Text>
                     </Card>
-                    <Button warning style={{ marginVertical: windowDim.height * 0.05, alignSelf: "center" }} onPress={this.navigateToTreatmentPage}>
-                        <Text>View new data</Text>
-                    </Button>
+                    <Card>
+                        <Text style={{ flex: 1, flexWrap: "wrap", fontSize:15}}>
+                            <Icon type="FontAwesome5" name="clipboard-list" />
+                            <Text style={styles.highlightedText}> {this.state.newPatient_ExactVariant} new patients </Text>
+                            registered to Varient claiming a diagnosis with your exact genetic variant
+                        </Text>
+                    </Card>
+                    <Card>
+                        <Text style={{ flex: 1, flexWrap: "wrap", fontSize:15}}>
+                            <Icon type="FontAwesome5" name="clipboard-list" />
+                            <Text style={styles.highlightedText}> {this.state.updatedPatient_ExactVariant} new patients </Text>
+                            with your exact genetic variant have updated their medication data.
+                        </Text>
+                    </Card>
+                    <Button
+                        style={{marginVertical: windowDim.height * 0.2, alignSelf: "center" }}
+                        icon={
+                            <Icon type="Entypo" name="news" />
+                        }
+                        onPress={this.navigateToTreatmentPage}
+                        title=" View New Data"
+                    />
                 </Content>
             </Container>
         );
@@ -61,16 +68,17 @@ class NewsPage extends React.Component {
 const windowDim = Dimensions.get('window');
 const styles = StyleSheet.create({
     greetingView: {
-        marginHorizontal: windowDim.width * 0.05,
-        marginTop: windowDim.height * 0.1,
-        marginBottom: windowDim.height * 0.05
+        marginHorizontal: windowDim.width * 0.14,
+        marginTop: windowDim.height * 0.03,
+        marginBottom: windowDim.height * 0.001
     },
     greetingText: {
         fontSize: 20,
         fontWeight: "bold"
     },
     highlightedText: {
-        color: "#ff0000"
+        color: "green",
+        fontSize: 20
     }
 });
 

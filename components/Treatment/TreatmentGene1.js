@@ -156,15 +156,25 @@ class TreatmentGene1 extends React.Component {
 
   _renderHeader = (item, expanded) => {
     return (
-      <View
-        style={{
-          flexDirection: "row",
-          padding: 20,
-          margin: 5,
-          alignItems: "center",
-          backgroundColor: "#A9DAD6",
-        }}
-      >
+      // <View
+      //   style={{
+      //     flexDirection: "row",
+      //     padding: 20,
+      //     margin: 5,
+      //     alignItems: "center",
+      //     backgroundColor: "#A9DAD6",
+      //   }}
+      // >
+          <View
+              style={{
+                  flexDirection: "row",
+                  padding: 20,
+                  margin: 5,
+                  alignItems: "center",
+                  borderStyle: 'solid',
+                  borderWidth: .25
+              }}
+          >
         <Text style={{ fontWeight: "bold", paddingRight: 3 }}>
           {" "}
           {item.title}
@@ -180,9 +190,18 @@ class TreatmentGene1 extends React.Component {
 
   _renderContent = (item) => {
     return (
+        // <Text
+        //     style={{
+        //         backgroundColor: "#e3f1f1",
+        //         padding: 10,
+        //         fontStyle: "italic",
+        //         margin: 5,
+        //     }}
+        // >
+        //     {item.content}
+        // </Text>
       <Text
         style={{
-          backgroundColor: "#e3f1f1",
           padding: 10,
           fontStyle: "italic",
           margin: 5,

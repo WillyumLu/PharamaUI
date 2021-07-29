@@ -163,7 +163,8 @@ class TreatmentGene1 extends React.Component {
           padding: 20,
           margin: 5,
           alignItems: "center",
-          backgroundColor: "#A9DAD6",
+          // backgroundColor: "#A9DAD6",
+            borderWidth:.25
         }}
       >
         <Text style={{ fontWeight: "bold", paddingRight: 3 }}>
@@ -183,7 +184,7 @@ class TreatmentGene1 extends React.Component {
     return (
       <Text
         style={{
-          backgroundColor: "#e3f1f1",
+          // backgroundColor: "#e3f1f1",
           padding: 10,
           fontStyle: "italic",
           margin: 5,

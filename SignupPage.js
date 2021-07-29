@@ -1,6 +1,8 @@
 import React from "react";
-import { Text, View, Button,StyleSheet, TextInput, Linking } from "react-native";
+import { Text, View,StyleSheet, TextInput, Linking } from "react-native";
 import AuthContext from "./contexts/AuthContext";
+import { Button, Icon } from 'react-native-elements';
+
 class SignupPage extends React.Component {
 
     constructor(props) {
@@ -83,11 +85,43 @@ class SignupPage extends React.Component {
               onChangeText={text => this.setState({reenterPassword:text})}
             />
         
-            <Button 
-              color="grey" 
-              title="By signing-up, I agree to the terms and conditions [learn more]" 
-              onPress={() => Linking.openURL('http://google.com')} />
-              <Button title="Sign up!" onPress={() => this._handleSignup()} />
+            {/*<Button*/}
+            {/*  color="grey" */}
+            {/*  title="By signing-up, I agree to the terms and conditions [learn more]" */}
+            {/*  onPress={() => Linking.openURL('http://google.com')} />*/}
+              <Text style={{
+                  color: 'grey',
+                  fontSize: 20,
+                  marginHorizontal: 50,
+                  paddingBottom: 10,
+              }}>
+                  By signing-up, I agree to the terms and conditions.
+              </Text>
+              <Button
+                  style={{paddingBottom: 20}}
+                  icon={
+                      <Icon
+                          name="description"
+                          size={17}
+                          color="black"
+                      />
+                  }
+                  type='clear'
+                  onPress={() => Linking.openURL('http://google.com')}
+                  title=" learn more"
+              />
+              <Button
+                  icon={
+                      <Icon
+                          name="person-add"
+                          size={17}
+                          color="black"
+                      />
+                  }
+                  type='clear'
+                  onPress={() => this._handleSignup()}
+                  title=" Sign In"
+              />
           </View>
         );
     }
@@ -100,7 +134,7 @@ const styles = StyleSheet.create({
   },
 
   greetingText:{
-    fontSize:18,
+    fontSize:35,
   },
 
   errorMessage: {
@@ -122,7 +156,6 @@ const styles = StyleSheet.create({
     borderBottomWidth:1,
     borderBottomColor:'grey',
     width: 300,
-
   },
 
   title:{
